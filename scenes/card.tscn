@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpm8bqrmwhoiu"]
+
+[ext_resource type="Texture2D" uid="uid://ipy3wa1k25ws" path="res://sprites/card-template.png" id="1_jr3ai"]
+[ext_resource type="Script" path="res://scripts/card.gd" id="1_uwits"]
+[ext_resource type="Texture2D" uid="uid://bqtufyhcksylm" path="res://sprites/cost-background.png" id="2_03rph"]
+[ext_resource type="FontFile" uid="uid://d3vrmasbinqa1" path="res://fonts/spacemono/SpaceMono-Regular.ttf" id="3_tg2hp"]
+[ext_resource type="Texture2D" uid="uid://pv87o1ogqyle" path="res://sprites/card_art/default-card-art.png" id="4_ag237"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nymxl"]
+font = ExtResource("3_tg2hp")
+font_size = 400
+
+[sub_resource type="LabelSettings" id="LabelSettings_0us7q"]
+font = ExtResource("3_tg2hp")
+font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_ir4x1"]
+font = ExtResource("3_tg2hp")
+font_size = 150
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_uwits")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_jr3ai")
+metadata/_edit_lock_ = true
+
+[node name="CostDisplay" type="Node2D" parent="."]
+position = Vector2(833, -488)
+metadata/_edit_lock_ = true
+
+[node name="CostBaseSprite" type="Sprite2D" parent="CostDisplay"]
+texture = ExtResource("2_03rph")
+metadata/_edit_lock_ = true
+
+[node name="CostLabel" type="Label" parent="CostDisplay"]
+offset_left = -787.0
+offset_top = -2724.0
+offset_right = -542.0
+offset_bottom = -2131.0
+text = "0"
+label_settings = SubResource("LabelSettings_nymxl")
+metadata/_edit_lock_ = true
+
+[node name="CardName" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="NameLabel" type="Label" parent="CardName"]
+offset_left = -2350.0
+offset_top = -2864.0
+offset_right = -500.0
+offset_bottom = -2394.0
+text = "Default Name"
+label_settings = SubResource("LabelSettings_0us7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="CardArt" type="Node2D" parent="."]
+position = Vector2(-1024, -937)
+metadata/_edit_lock_ = true
+
+[node name="CardArtSprite" type="Sprite2D" parent="CardArt"]
+texture = ExtResource("4_ag237")
+metadata/_edit_lock_ = true
+
+[node name="CardDescription" type="Label" parent="."]
+offset_left = -2344.0
+offset_top = 458.0
+offset_right = 159.0
+offset_bottom = 1313.0
+text = "Default Card Description"
+label_settings = SubResource("LabelSettings_ir4x1")
+metadata/_edit_lock_ = true
