@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://dtb5g20jb6y1j"]
+[gd_scene load_steps=3 format=3 uid="uid://dtb5g20jb6y1j"]
+
+[ext_resource type="PackedScene" uid="uid://chbvivqqbobg6" path="res://scenes/hand.tscn" id="1_ooagd"]
+
+[sub_resource type="Curve" id="Curve_xnet4"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 2.0, 0, 0, Vector2(1, 1), 2.0, 0.0, 1, 0]
+point_count = 2
 
 [node name="Board" type="Node2D"]
+
+[node name="Hand" parent="." instance=ExtResource("1_ooagd")]
+position = Vector2(525, 800)
+spread_curve = SubResource("Curve_xnet4")
