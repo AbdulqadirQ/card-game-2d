@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtb5g20jb6y1j"]
+[gd_scene load_steps=3 format=3 uid="uid://dtb5g20jb6y1j"]
 
+[ext_resource type="Script" path="res://scripts/board.gd" id="1_7hfk4"]
 [ext_resource type="PackedScene" uid="uid://chbvivqqbobg6" path="res://scenes/hand.tscn" id="1_ooagd"]
 
 [node name="Board" type="Node2D"]
+script = ExtResource("1_7hfk4")
 
 [node name="Hand" parent="." instance=ExtResource("1_ooagd")]
-position = Vector2(1050, 700)
+position = Vector2(1100, 700)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 54.0
+offset_right = 202.0
+offset_bottom = 107.0
+text = "Add Card"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 120.0
+offset_right = 201.0
+offset_bottom = 173.0
+text = "Remove Card"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
