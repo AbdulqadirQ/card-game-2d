@@ -1,10 +1,13 @@
 extends Node2D
 
 @export var spread_curve: Curve
+@export var height_curve: Curve
+@export var rotation_curve: Curve
 
 const CARD = preload("res://scenes/card.tscn")
 # determines the width of the hand
 const HAND_WIDTH: int = 650
+const HAND_CURVE: int = 150
 var cards: Array = []
 
 func add_5_cards() -> void:
@@ -23,8 +26,11 @@ func position_cards() -> void:
 		
 		var destination: Transform2D = transform
 		# spaces the cards out based on HAND_WIDTH x hand_ratio
-		destination.origin.x += spread_curve.sample(hand_ratio) * HAND_WIDTH
-		card.position.x = destination.origin.x
+		card.transform.origin.x += spread_curve.sample(hand_ratio) * HAND_WIDTH
+		# spaces the cards out vertically based on HAND_CURVE x hand_ratio
+		card.transform.origin.y -= height_curve.sample(hand_ratio) * HAND_CURVE
+		
+		card.rotation -= rotation_curve.sample(hand_ratio) * 0.3
 
 func _ready():
 	add_5_cards()

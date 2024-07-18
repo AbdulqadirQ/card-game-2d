@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://chbvivqqbobg6"]
+[gd_scene load_steps=5 format=3 uid="uid://chbvivqqbobg6"]
 
 [ext_resource type="Script" path="res://scripts/hand.gd" id="1_2yja3"]
+[ext_resource type="Curve" uid="uid://dbyp4fqsmypm2" path="res://scenes/spread_curve.tres" id="2_3g8h8"]
+[ext_resource type="Curve" uid="uid://gjnk6bgv86hv" path="res://scenes/height_curve.tres" id="3_qbvln"]
+[ext_resource type="Curve" uid="uid://dfujc2854k1rn" path="res://scenes/rotation_curve.tres" id="4_exm8l"]
 
 [node name="Hand" type="Node2D"]
 script = ExtResource("1_2yja3")
+spread_curve = ExtResource("2_3g8h8")
+height_curve = ExtResource("3_qbvln")
+rotation_curve = ExtResource("4_exm8l")
 
 [node name="HandContainer" type="Node2D" parent="."]
