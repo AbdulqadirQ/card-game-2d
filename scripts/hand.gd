@@ -36,17 +36,21 @@ func position_cards() -> void:
 			hand_ratio = float(card.get_index()-1) / float(cards.size()-1)
 
 		if cards.size() <= 2:
-			HAND_WIDTH = 150
+			HAND_WIDTH = 100
 			HAND_CURVE = 0
 			HAND_ROTATION = 0
 		elif cards.size() <= 4:
+			HAND_WIDTH = 200
+			HAND_CURVE = 25
+			HAND_ROTATION = 0.1
+		elif cards.size() <= 4:
+			HAND_WIDTH = 250
+			HAND_CURVE = 50
+			HAND_ROTATION = 0.2
+		else:
 			HAND_WIDTH = 300
 			HAND_CURVE = 75
-			HAND_ROTATION = 0.1
-		else:
-			HAND_WIDTH = 650
-			HAND_CURVE = 150
-			HAND_ROTATION = 0.3
+			HAND_ROTATION = 0.2
 		
 		# spaces the cards out based on HAND_WIDTH x hand_ratio
 		card.position.x = spread_curve.sample(hand_ratio) * HAND_WIDTH

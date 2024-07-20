@@ -19,7 +19,7 @@ font = ExtResource("3_tg2hp")
 font_size = 150
 
 [node name="Card" type="Node2D"]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.075, 0.075)
 script = ExtResource("1_uwits")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
